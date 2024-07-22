@@ -8,4 +8,64 @@
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
+    padding-top: 5rem;
+}
+
+.title {
+    font-size: 4rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.mainbox {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.editor {
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 48%;
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    &__textarea {
+        resize: none;
+        width: 80%;
+        height: 60vh;
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.5rem;
+        border: 3px solid #111111;
+    }
+}
+
+.previewer {
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 48%;
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    &__content {
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.5rem;
+        width: 80%;
+        height: 60vh;
+        scroll-behavior: auto;
+        border: 3px solid #111111;
+    }
 }
