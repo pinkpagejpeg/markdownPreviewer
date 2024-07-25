@@ -4,7 +4,7 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
 
 const Editor: FC = () => {
-    const { text } = useTypedSelector(state => state.markdown)
+    const { markdown } = useTypedSelector(state => state.markdown)
     const { updateMarkdownText } = useActions()
 
     const textareaHandler = (e: { target: { value: string } }) => {
@@ -18,7 +18,7 @@ const Editor: FC = () => {
                 className={classes.editor__textarea}
                 id="editor"
                 onChange={textareaHandler}
-                value={text}></textarea>
+                value={markdown}></textarea>
         </div>
     );
 }

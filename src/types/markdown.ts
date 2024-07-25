@@ -1,9 +1,11 @@
 export interface IMarkdownText {
-    text: string,
+    markdown: string,
+    previewer: string
 }
 
 export enum MarkdownActionTypes {
     UPDATE_MARKDOWN_TEXT = "UPDATE_MARKDOWN_TEXT",
+    UPDATE_PREVIEWER_TEXT = "UPDATE_PREVIEWER_TEXT",
 }
 
 export interface IMarkdownUpdateTextAction {
@@ -11,4 +13,9 @@ export interface IMarkdownUpdateTextAction {
     payload: string
 }
 
-export type MarkdownAction = IMarkdownUpdateTextAction
+export interface IPreviewerUpdateTextAction {
+    type: MarkdownActionTypes.UPDATE_PREVIEWER_TEXT,
+    payload: string
+}
+
+export type MarkdownAction = IMarkdownUpdateTextAction | IPreviewerUpdateTextAction

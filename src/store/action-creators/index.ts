@@ -1,5 +1,6 @@
-import { updateMarkdownText } from "./markdown"
+import { updateMarkdownText, updatePreviewerText } from "./markdown"
 
 export default {
-    updateMarkdownText
+    updateMarkdownText,
+    updatePreviewerText
 }

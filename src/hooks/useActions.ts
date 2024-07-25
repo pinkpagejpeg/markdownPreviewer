@@ -4,6 +4,7 @@ import MarkdownActionCreators from "../store/action-creators/index"
 export const useActions = () => {
     const dispatch = useAppDispatch()
     return {
-        updateMarkdownText: (text: string) => dispatch(MarkdownActionCreators.updateMarkdownText(text))
+        updateMarkdownText: (markdown: string) => dispatch(MarkdownActionCreators.updateMarkdownText(markdown)),
+        updatePreviewerText: (previewer: string) => dispatch(MarkdownActionCreators.updatePreviewerText(previewer))
     }
 }
