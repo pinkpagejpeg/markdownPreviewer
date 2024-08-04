@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { FC } from "react"
 import classes from "./styles/main.module.scss"
-import Editor from './components/editor/Editor'
-import Previewer from './components/previewer/Previewer'
+import Editor from "./components/editor/Editor"
+import Previewer from "./components/previewer/Previewer"
 
 const App: FC = () => {
 

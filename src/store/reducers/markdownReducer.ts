@@ -1,51 +1,18 @@
 import { IMarkdownText, MarkdownAction, MarkdownActionTypes } from "../../types/markdown"
 
 const initialState: IMarkdownText = {
-    markdown: `# Welcome to my React Markdown Previewer!
-
-## This is a sub-heading...
-### And here's some other cool stuff:
-
-Here is some code of mine, \`<div></div>\`, between 2 backticks. Important for later #React!
-
-**bold**... whoa! is fabulous!
-Or _italic_. _Forza Italia!_
-Or... wait for it... **_both!_**
-**Errors?** ~~cross them out~~.
-
-[links](https://www.freecodecamp.org), and
-> Block Quotes! are provided too!
-
-tables, here they are:
-
-Header1 | Header2 | Header3?
------------- | ------------- | -------------
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
-
-- And of course, there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
-
-1. And there are numbered lists too.
-1. Use just 1s if you want!
-1. And last but not least, let's not forget embedded images:
-
-![Image](https://via.placeholder.com/150)
-
-\`\`\`
-Some code block
-\`\`\`
-`,
-    previewer: ''};
+    markdown: "# Welcome to my React Markdown Previewer!\n\n## This is a sub-heading...\n### And here's some other cool stuff:\n\nHeres some code, `<div></div>`, between 2 backticks.\n\n```\n// this is multi-line code:\n\nfunction anotherExample(firstLine, lastLine) {\n  if (firstLine == '```' && lastLine == '```') {\n    return multiLineCode;\n  }\n}\n```\n\nYou can also make text **bold**... whoa!\nOr _italic_.\nOr... wait for it... **_both!_**\nAnd feel free to go crazy ~~crossing stuff out~~.\n\nThere's also [links](https://www.freecodecamp.org), and\n> Block Quotes!\n\nAnd if you want to get really crazy, even tables:\n\nWild Header | Crazy Header | Another Header?\n------------ | ------------- | -------------\nYour content can | be here, and it | can be here....\nAnd here. | Okay. | I think we get it.\n\n- And of course there are lists.\n  - Some are bulleted.\n     - With different indentation levels.\n        - That look like this.\n\n\n1. And there are numbered lists too.\n1. Use just 1s if you want!\n1. And last but not least, let's not forget embedded images:\n\n![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)\n",
+    previewer: ''
+};
 
 export const markdownReducer = (state = initialState, action: MarkdownAction) => {
+    console.log(action)
+    console.log(state)
     switch (action.type) {
         case MarkdownActionTypes.UPDATE_MARKDOWN_TEXT:
-            return {...state, markdown: action.payload}
+            return { ...state, markdown: action.payload }
         case MarkdownActionTypes.UPDATE_PREVIEWER_TEXT:
-            return {...state, previewer: action.payload}
+            return { ...state, previewer: action.payload }
         default:
             return state
     }

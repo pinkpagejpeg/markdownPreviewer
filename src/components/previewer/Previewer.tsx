@@ -8,29 +8,23 @@ const Previewer: FC = () => {
     const { markdown, previewer } = useTypedSelector(state => state.markdown)
     const { updatePreviewerText } = useActions()
 
-    useEffect(() => {
-        const getMarkdownText = async () => {
-            const markdownText = await marked(markdown)
-            updatePreviewerText(markdownText)
-        }
-        getMarkdownText()
-    }, [markdown])
-
     marked.setOptions({
         breaks: true,
+        gfm: true,
     });
 
-    console.log(markdown, previewer)
+    useEffect(() => {
+        const markdownText = marked(markdown)
+        updatePreviewerText(String(markdownText))
+    }, [markdown])
 
     return (
         <div className={classes.previewer__box}>
             <h2 className={classes.previewer__title}>Previewer</h2>
-            {previewer !== '' &&
-                <div id="previewer"
-                    className={classes.previewer__content}
-                    dangerouslySetInnerHTML={{ __html: previewer }}>
-                </div>
-            }
+            <div id="preview"
+                className={classes.previewer__content}
+                dangerouslySetInnerHTML={{ __html: previewer }}>
+            </div>
         </div>
     );
 }

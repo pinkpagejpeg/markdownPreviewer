@@ -1,5 +1,5 @@
-import { combineReducers } from "redux";
-import { markdownReducer } from "./markdownReducer";
+import { combineReducers } from "redux"
+import { markdownReducer } from "./markdownReducer"
 
 export const rootReducer = combineReducers({
     markdown: markdownReducer
